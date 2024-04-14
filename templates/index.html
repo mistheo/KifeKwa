@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" class="h-100">
+
+{% from "common.html" import head_project, header %}
+{{ head_project("KifeKwa",".\static\css\index.css") }}
+
+<body class="d-flex flex-column h-100 text-white bg-dark">
+
+    {{ header(1) }}
+
+    <main class="flex-grow-1 d-flex justify-content-center align-items-center px-3 cal-bg text-center">
+
+        <div class="mb-5">
+            <h1>Evenements, Agendas, Courses</h1>
+            <p class="lead">Vous oubliez tout ? On oublie rien. Partout, pour vous.</p>
+            <p class="lead mt-5">
+                <a href="/monagenda" class="btn btn-lg btn-light fw-bold">Voir mon agenda</a>
+            </p>
+        </div>
+    </main>
+
+    <footer class="mt-auto text-white-50">
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+/*
+ * Globals
+ */
+ @import url('https://fonts.cdnfonts.com/css/jellee');
+
+/* Custom default button */
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body` */
+}
+
+.cover-container {
+  max-width: 42em;
+}
+
+.jellee-font {
+  font-family: 'Jellee', sans-serif;
+}
+
+.invert {
+  filter: invert(1);
+}
+
+/*
+ * Header
+ */
+
+ header a, nav a,  header a span.animheader {
+  text-decoration: none !important;
+  color: #ffffff;
+  transition: border-bottom 0.1s 0.1s;
+ }
+
+ header a span.animheader:hover{
+  border-bottom: .15rem solid #fff;
+ }
+
+.nav-masthead a.nav-link {
+  padding: .25rem 0;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: transparent;
+  border-bottom: .15rem solid transparent;
+}
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+  border-bottom-color: #ffffff;
+}
+
+.nav-masthead .nav-link + .nav-link {
+  margin-left: 1rem;
+
+}
+
+.nav-masthead .active {
+  color: #fff;
+  border-bottom-color: #fff !important;
+
+}
+
+
+/*
+ * Body
+ */
+
+.cal-bg {
+  background: url(https://cdn.pixabay.com/photo/2016/11/23/15/53/business-1853682_1280.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+} 
+
+.btn-light:hover {
+  background-color: transparent !important ;
+  color: white !important;
+}

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en" class="h-100">
+
+
+{% from "common.html" import head_project,header %}
+{{ head_project("KifeKwa - Login",".\static\css\login.css") }}
+
+<body class="d-flex flex-column h-100 text-white bg-dark">
+
+    <body class="d-flex flex-column h-100 text-white bg-dark">
+
+    {{ header(2) }}
+
+    <main class="flex-grow-1 d-flex justify-content-center align-items-center px-3 cal-bg text-center">
+        <div class="mb-5 w-50">
+            <form autocomplete="off" action="/connect" method="post" class="needs-validation form-signin" novalidate>
+                <div class="form-floating">
+                    <input type="text" class="password-input form-control" id="username" name="username"
+                        placeholder="Nom d'Utilisateur" required>
+                    <label for="username text-black">Nom d'Utilisateur</label>
+                    <div class="invalid-feedback">
+                        Veuillez entrer votre nom d'utilisateur.
+                    </div>
+                </div>
+
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Mot de passe"
+                        required>
+                    <label for="password">Mot de passe</label>
+                    <div class="invalid-feedback">
+                        Veuillez entrer votre mot de passe.
+                    </div>
+                </div>
+
+                <div class="mb-3 d-flex form-check">
+                    <input type="checkbox" class="form-check-input" id="stay-connected">
+                    <label class="form-check-label mx-2" for="stay-cinnected">Rester connecté ?</label>
+                  </div>
+
+                <button class="btn btn-dark w-100" type="submit">Connexion</button>
+            </form>
+    </main>
+
+    <footer class="mt-auto text-white-50">
+    </footer>
+
+</body>
+
+</html>
