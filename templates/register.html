@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 
-{% from "common.html" import head_project,header %}
+{% from "common.html" import head_project,header,input_form %}
 {{ head_project("KifeKwa - Register","static/css/register.css") }}
 
 
@@ -15,41 +15,12 @@
 
     <main class="flex-grow-1 d-flex justify-content-center align-items-center px-3 cal-bg text-center">
         <div class="mb-5 w-50">
-            <form autocomplete="off" action="" method="post" class="needs-validation form-signin" novalidate>
-                <div class="form-floating">
-                    <input type="text" class="start-form form-control" id="username" name="username"
-                        placeholder="Nom d'Utilisateur" required>
-                    <label for="username text-black">Nom d'Utilisateur</label>
-                    <div class="invalid-feedback">
-                        Veuillez entrer votre nom d'utilisateur.
-                    </div>
-                </div>
+            <form autocomplete="off" action="/register/new" method="post" class="needs-validation form-signin" novalidate>
 
-                <div class="form-floating">
-                    <input type="text" class="form-control" id="pseudo" name="pseudo" placeholder="Pseudo" required>
-                    <label for="pseudo">Pseudo (facultatif)</label>
-                    <div class="invalid-feedback">
-                        Veuillez entrer votre pseudo.
-                    </div>
-                </div>
-
-                <div class="form-floating">
-                    <input type="password" class="form-control" id="password" name="password" placeholder="Mot de passe"
-                        required>
-                    <label for="password">Mot de passe</label>
-                    <div class="invalid-feedback">
-                        Veuillez entrer votre mot de passe.
-                    </div>
-                </div>
-
-                <div class="form-floating">
-                    <input type="password" class="form-control end-form" id="confirm-password" name="confirm-password"
-                        placeholder="Confirmer le mot de passe" required>
-                    <label for="confirm-password">Confirmer le mot de passe</label>
-                    <div class="invalid-feedback">
-                        Veuillez confirmer votre mot de passe.
-                    </div>
-                </div>
+                {{ input_form("text","username","Nom d'Utilisateur","Nom d'Utilisateur",True,"start-form") }}
+                {{ input_form("text","nickname","Pseudo (facultatif)","Pseudo") }}
+                {{ input_form("password","password","Mot de passe","Mot de passe",True) }}
+                {{ input_form("password","confirm-password","Confirmer le mot de passe","Confirmer le mot de passe",True,"end-form") }}
 
                 <button class="btn btn-dark w-100 mt-4" type="submit">S'enregistrer</button>    
             </form>

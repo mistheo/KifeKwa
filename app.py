@@ -5,7 +5,6 @@ from datetime import datetime, timedelta
 import sqlite3 as sql
 from pathlib import Path
 import hashlib
-from werkzeug.middleware.proxy_fix import ProxyFix
 
 # CONSTANTES
 DATABASE_PATH = 'projet.db'
@@ -13,8 +12,7 @@ SCRIPTSQL_PATH = 'script.sql'
 
 app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'  # Clé secrète pour le chiffrement du cookie de session
-app.permanent_session_lifetime = timedelta(minutes=30)  # Durée de vie de la session : 2 heures
-app.wsgi_app = ProxyFix(app.wsgi_app)
+app.permanent_session_lifetime = timedelta(minutes=30)  # Durée de vie de la session : 30 min
 
 # INITIALISATION DE LA BASE DE DONNÉES
 db_path = Path(DATABASE_PATH)
@@ -74,7 +72,7 @@ def displayRegisterPage():
 def registerToApplication():
     newUserName = request.form['username']
     newUserPass = request.form['password']
-    newUserPassConf = request.form['confirm_password']
+    newUserPassConf = request.form['confirm-password']
     newUserNick = request.form['nickname']
        
     if not(newUserPass == newUserPassConf):

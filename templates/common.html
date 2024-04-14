@@ -19,11 +19,11 @@
 {% macro header(option) -%}
 <header class="d-flex justify-content-around my-2">
     <div class="shadow-lg">
-        <h3 class="jellee-font"><a href="/"><span class="animheader">KifeKwa</span>&trade;</a></h3>
+        <h3 class="jellee-font"><a href="/"><span class="animheader">KiFeKwa</span>&trade;</a></h3>
     </div>
     <div>
         <nav class="nav nav-masthead justify-content-center float-md-end">
-
+            
             {% if option == 1 %}
             <a class="nav-link active" href="/">Page d'acceuil</a>
             <a class="nav-link" href="/login">Connexion</a>
@@ -37,10 +37,28 @@
             <a class="nav-link" href="/login">Connexion</a>
             <a class="nav-link active" href="/register">S'enregistrer</a>
             {% endif %}
-
-
+            
+            
         </nav>
     </div>
 </header>
 {%- endmacro %}
 
+
+
+{% macro input_form(type,name,label,placeholder,required=False,addClass="") -%}
+<div class="form-floating">
+    
+    {% if required %}
+    <input type="{{type}}" class="form-control {{addClass}}" id="{{name}}" name="{{name}}" placeholder="{{placeholder}}" required>
+    {% else %}
+    <input type="{{type}}" class="form-control {{addClass}}" id="{{name}}" name="{{name}}" placeholder="{{placeholder}}">
+    {% endif %}
+    
+    <label for="{{name}}">{{label}}</label>
+</div>
+{%- endmacro %}
+
+<div class="invalid-feedback">
+    Veuillez entrer votre pseudo.
+</div>
